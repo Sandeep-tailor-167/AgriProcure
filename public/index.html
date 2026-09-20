@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153f2e">
+  <meta name="description" content="AgriProcure — simple, transparent agricultural procurement for every farmer.">
+  <title>AgriProcure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="demo-ribbon" role="note">
+    <span><span class="pulse-dot"></span> Hackathon demo · Synthetic data only</span>
+    <button id="demoHelp" class="text-button">Demo access <svg class="icon"><use href="#chevron-down"></use></svg></button>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#dashboard" aria-label="AgriProcure home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 33V18M20 23C12 23 8 18 8 10c8 0 12 5 12 13Zm0 3c8 0 13-5 13-14-8 0-13 5-13 14Z"/></svg></span>
+      <span>Agri<span>Procure</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#dashboard" data-route="dashboard" class="active"><svg class="icon"><use href="#home"></use></svg>Dashboard</a>
+      <a href="#centres" data-route="centres"><svg class="icon"><use href="#map-pin"></use></svg>Centres</a>
+      <a href="#appointments" data-route="appointments"><svg class="icon"><use href="#calendar"></use></svg>My bookings</a>
+      <a href="#support" data-route="support"><svg class="icon"><use href="#help"></use></svg>Support</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="language-button" id="languageToggle" aria-label="Change language"><span>अ</span> हिंदी</button>
+      <button class="icon-button notification-button" id="notificationButton" aria-label="Notifications">
+        <svg class="icon"><use href="#bell"></use></svg><span class="notification-count" id="notificationCount">2</span>
+      </button>
+      <button class="avatar-button" id="profileButton" aria-label="Open profile menu">
+        <span class="avatar">RK</span><span class="avatar-copy"><strong id="headerName">Ramesh Kumar</strong><small id="headerRole">Farmer · F-2026-1048</small></span><svg class="icon"><use href="#chevron-down"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <section id="dashboardView" class="view active" aria-labelledby="welcomeTitle">
+      <div class="page-shell">
+        <div class="welcome-row reveal">
+          <div>
+            <p class="eyebrow" id="todayLabel">Sunday, 20 September</p>
+            <h1 id="welcomeTitle">Namaste, <span id="firstName">Ramesh</span> <span aria-hidden="true">👋</span></h1>
+            <p id="welcomeCopy">Here’s everything you need for your next procurement visit.</p>
+          </div>
+          <button class="primary-button" data-action="open-booking"><svg class="icon"><use href="#plus"></use></svg>Book new appointment</button>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="main-column">
+            <article class="card appointment-card reveal delay-1" id="nextAppointmentCard">
+              <div class="section-heading">
+                <div><span class="status-pill success"><span></span>Confirmed</span><h2>Your next appointment</h2></div>
+                <button class="more-button" aria-label="More appointment options">•••</button>
+              </div>
+              <div class="appointment-layout">
+                <div class="date-tile"><span id="appointmentMonth">SEP</span><strong id="appointmentDay">21</strong><small id="appointmentWeekday">MON</small></div>
+                <div class="appointment-details">
+                  <h3 id="appointmentCentre">Karnal Grain Mandi</h3>
+                  <p><svg class="icon"><use href="#clock"></use></svg><span id="appointmentTime">09:00 – 11:00</span></p>
+                  <p><svg class="icon"><use href="#wheat"></use></svg><span id="appointmentCrop">Wheat · Est. 22.5 quintals</span></p>
+                  <p><svg class="icon"><use href="#map-pin"></use></svg><span id="appointmentAddress">GT Road, Sector 12, Karnal</span></p>
+                </div>
+                <div class="token-block">
+                  <small>YOUR TOKEN</small><strong id="appointmentToken">W-018</strong><span>Booking <b id="bookingReference">AP-2609-1842</b></span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <p><svg class="icon"><use href="#info"></use></svg>Please arrive 20 minutes before your slot with a valid photo ID.</p>
+                <button class="secondary-button" data-action="view-token">View token <svg class="icon"><use href="#arrow-right"></use></svg></button>
+              </div>
+            </article>
+
+            <section class="reveal delay-2">
+              <div class="section-title-row"><div><h2>Track your procurement</h2><p>Follow every step from booking to payment.</p></div><button class="text-button" data-route-link="appointments">View full history <svg class="icon"><use href="#arrow-right"></use></svg></button></div>
+              <article class="card tracking-card">
+                <div class="timeline" id="trackingTimeline">
+                  <div class="timeline-step done"><span><svg><use href="#check"></use></svg></span><div><strong>Appointment booked</strong><small id="timelineBooked">20 Sep · 10:42 AM</small></div></div>
+                  <div class="timeline-step active"><span><svg><use href="#calendar"></use></svg></span><div><strong>Visit the centre</strong><small id="timelineVisit">21 Sep · 09:00 AM</small></div><em>Next step</em></div>
+                  <div class="timeline-step"><span><svg><use href="#search"></use></svg></span><div><strong>Crop inspection</strong><small>Quality & weight check</small></div></div>
+                  <div class="timeline-step"><span><svg><use href="#receipt"></use></svg></span><div><strong>Purchase recorded</strong><small>Final quantity & rate</small></div></div>
+                  <div class="timeline-step"><span><svg><use href="#wallet"></use></svg></span><div><strong>Payment update</strong><small>Verified status only</small></div></div>
+                </div>
+              </article>
+            </section>
+
+            <section class="reveal delay-3">
+              <div class="section-title-row"><div><h2>Centres near you</h2><p>Published schedules in and around Karnal.</p></div><button class="text-button" data-route-link="centres">See all centres <svg class="icon"><use href="#arrow-right"></use></svg></button></div>
+              <div class="nearby-centres" id="nearbyCentres"><div class="skeleton-card"></div><div class="skeleton-card"></div></div>
+            </section>
+          </div>
+
+          <aside class="side-column">
+            <article class="queue-card reveal delay-1">
+              <div class="queue-header"><div><span class="live-badge"><i></i>LIVE QUEUE</span><h2>Karnal Grain Mandi</h2></div><svg class="queue-illustration" viewBox="0 0 110 80" aria-hidden="true"><path d="M7 67h96"/><path d="m17 67 5-37 19-12 20 12 7 37M25 67V34h36v33M69 67l4-28h20l6 28M77 39v-9h12v9M16 32h48"/><circle cx="36" cy="46" r="5"/><path d="M31 67V55h10v12M78 48h10M76 56h14"/></svg></div>
+              <div class="queue-numbers">
+                <div><small>NOW SERVING</small><strong id="currentToken">W-014</strong></div><span><svg class="icon"><use href="#arrow-right"></use></svg></span><div><small>YOUR TOKEN</small><strong id="yourToken">W-018</strong></div>
+              </div>
+              <div class="wait-card"><svg class="icon"><use href="#users"></use></svg><div><strong><span id="peopleAhead">4</span> farmers ahead of you</strong><small>Estimated wait: <b id="estimatedWait">24–40 min</b></small></div></div>
+              <div class="queue-footer"><span><svg class="icon"><use href="#refresh"></use></svg>Updated <b id="queueUpdated">just now</b></span><button class="text-button" data-action="refresh-queue">Refresh</button></div>
+              <div class="queue-tip"><svg class="icon"><use href="#sparkles"></use></svg><p><strong>Travel smart</strong> Leave when there are 6–8 farmers ahead. Wait times are estimates, not guarantees.</p></div>
+            </article>
+
+            <article class="card checklist-card reveal delay-2">
+              <div class="section-heading"><div><span class="eyebrow">BEFORE YOU GO</span><h2>Visit checklist</h2></div><span class="progress-ring">3/4</span></div>
+              <label><input type="checkbox" checked><span><svg><use href="#check"></use></svg></span>Digital appointment token</label>
+              <label><input type="checkbox" checked><span><svg><use href="#check"></use></svg></span>Valid government photo ID</label>
+              <label><input type="checkbox" checked><span><svg><use href="#check"></use></svg></span>Bank account details</label>
+              <label><input type="checkbox"><span><svg><use href="#check"></use></svg></span>Crop cleaned and packed</label>
+            </article>
+
+            <article class="weather-card reveal delay-3">
+              <div><span class="weather-icon">☀️</span><div><strong>31°C</strong><small>Karnal · Clear</small></div></div>
+              <p>Good conditions for travel. Carry drinking water.</p>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="centresView" class="view" aria-labelledby="centresTitle">
+      <div class="page-shell narrow-shell">
+        <div class="page-heading"><div><p class="eyebrow">FIND THE RIGHT CENTRE</p><h1 id="centresTitle">Procurement centres</h1><p>Compare crops, schedules, distance, and availability before booking.</p></div><button class="primary-button" data-action="open-booking"><svg class="icon"><use href="#plus"></use></svg>Book appointment</button></div>
+        <div class="filter-bar card">
+          <label class="search-field"><svg class="icon"><use href="#search"></use></svg><input id="centreSearch" type="search" placeholder="Search centre or location"></label>
+          <select id="cropFilter" aria-label="Filter by crop"><option value="">All crops</option><option>Wheat</option><option>Paddy</option><option>Mustard</option><option>Maize</option></select>
+          <select id="districtFilter" aria-label="Filter by district"><option value="">All districts</option><option>Karnal</option><option>Panipat</option></select>
+        </div>
+        <div class="result-summary"><strong id="resultCount">4 centres</strong><span>Sorted by distance</span></div>
+        <div class="centres-list" id="centresList"></div>
+      </div>
+    </section>
+
+    <section id="appointmentsView" class="view" aria-labelledby="appointmentsTitle">
+      <div class="page-shell narrow-shell">
+        <div class="page-heading"><div><p class="eyebrow">YOUR PROCUREMENT JOURNEY</p><h1 id="appointmentsTitle">My bookings</h1><p>Appointments, tokens, and procurement history in one place.</p></div><button class="primary-button" data-action="open-booking"><svg class="icon"><use href="#plus"></use></svg>New booking</button></div>
+        <div class="tab-list" role="tablist"><button class="active" data-booking-tab="active">Active</button><button data-booking-tab="past">Past</button><button data-booking-tab="cancelled">Cancelled</button></div>
+        <div id="appointmentsList" class="appointments-list"></div>
+      </div>
+    </section>
+
+    <section id="supportView" class="view" aria-labelledby="supportTitle">
+      <div class="page-shell narrow-shell">
+        <div class="support-hero"><div><p class="eyebrow">WE’RE HERE TO HELP</p><h1 id="supportTitle">How can we help?</h1><p>Get simple answers about bookings, centre visits, crop inspection, and payment status.</p></div><svg viewBox="0 0 200 150" aria-hidden="true"><path d="M28 130h144M60 129V59l41-25 40 25v70M74 81h53M74 97h53M74 113h34M96 34V18h25v28"/><circle cx="44" cy="102" r="15"/><path d="M44 87V70M36 76l8-7 8 7"/></svg></div>
+        <div class="support-grid">
+          <article class="card contact-card"><span><svg class="icon"><use href="#phone"></use></svg></span><div><small>TOLL-FREE HELPLINE</small><h3>1800-120-4100</h3><p>Available daily, 7:00 AM–7:00 PM</p></div><button class="secondary-button">Call now</button></article>
+          <article class="card contact-card"><span><svg class="icon"><use href="#message"></use></svg></span><div><small>CHAT SUPPORT</small><h3>Ask in your language</h3><p>Typical response within 5 minutes</p></div><button class="secondary-button" data-action="toast-support">Start chat</button></article>
+        </div>
+        <h2 class="faq-heading">Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>What should I bring to the procurement centre?<svg class="icon"><use href="#chevron-down"></use></svg></summary><p>Bring your digital token, valid photo ID, bank account details, and produce prepared according to the centre’s published requirements.</p></details>
+          <details><summary>Can I reschedule or cancel a booking?<svg class="icon"><use href="#chevron-down"></use></svg></summary><p>You can cancel a confirmed booking before check-in. Rescheduling is handled by cancelling the current slot and selecting a new available slot.</p></details>
+          <details><summary>Is the queue waiting time guaranteed?<svg class="icon"><use href="#chevron-down"></use></svg></summary><p>No. It is a range based on recent service times. Weather, inspections, or centre interruptions can change it.</p></details>
+          <details><summary>Does AgriProcure send or process my payment?<svg class="icon"><use href="#chevron-down"></use></svg></summary><p>No. AgriProcure displays only payment updates verified by an authorised source; it does not perform banking operations.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="officerView" class="view" aria-labelledby="officerTitle">
+      <div class="page-shell narrow-shell">
+        <div class="page-heading"><div><p class="eyebrow">CENTRE OPERATIONS</p><h1 id="officerTitle">Good morning, Anita</h1><p>Karnal Grain Mandi · Today’s operational dashboard</p></div><span class="status-pill success"><span></span>Queue running</span></div>
+        <div class="metric-grid" id="officerMetrics"></div>
+        <div class="operator-grid"><article class="card"><div class="section-title-row"><div><h2>Today’s queue</h2><p>Check in and serve booked farmers.</p></div><span class="live-badge"><i></i>LIVE</span></div><div class="operator-table" id="operatorQueue"></div></article><article class="card"><div class="section-title-row"><div><h2>Centre status</h2><p>Current operating conditions.</p></div></div><div class="control-list"><div><span><svg class="icon"><use href="#calendar"></use></svg>Daily capacity</span><strong>24 slots</strong></div><div><span><svg class="icon"><use href="#clock"></use></svg>Operating hours</span><strong>08:00–17:00</strong></div><div><span><svg class="icon"><use href="#wheat"></use></svg>Active crop</span><strong>Wheat</strong></div><button class="secondary-button full-width" data-action="toast-schedule">Manage schedule</button></div></article></div>
+      </div>
+    </section>
+
+    <section id="adminView" class="view" aria-labelledby="adminTitle">
+      <div class="page-shell narrow-shell">
+        <div class="page-heading"><div><p class="eyebrow">SYSTEM OVERVIEW</p><h1 id="adminTitle">Administration</h1><p>Monitor centres, people, procurement activity, and exceptions.</p></div><button class="secondary-button" data-action="toast-report"><svg class="icon"><use href="#download"></use></svg>Export report</button></div>
+        <div class="metric-grid admin-metrics" id="adminMetrics"></div>
+        <div class="operator-grid"><article class="card"><div class="section-title-row"><div><h2>Centre operations</h2><p>Live status across the pilot network.</p></div><button class="text-button" data-action="toast-centre">Manage centres</button></div><div class="admin-centres" id="adminCentres"></div></article><article class="card"><div class="section-title-row"><div><h2>Recent audit activity</h2><p>Authorised operational changes.</p></div></div><div class="audit-list" id="auditList"></div></article></div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Mobile primary navigation">
+    <a href="#dashboard" data-route="dashboard" class="active"><svg class="icon"><use href="#home"></use></svg><span>Home</span></a>
+    <a href="#centres" data-route="centres"><svg class="icon"><use href="#map-pin"></use></svg><span>Centres</span></a>
+    <button data-action="open-booking"><span><svg class="icon"><use href="#plus"></use></svg></span><small>Book</small></button>
+    <a href="#appointments" data-route="appointments"><svg class="icon"><use href="#calendar"></use></svg><span>Bookings</span></a>
+    <a href="#support" data-route="support"><svg class="icon"><use href="#help"></use></svg><span>Help</span></a>
+  </nav>
+
+  <div class="popover notification-popover" id="notificationPopover" hidden>
+    <div class="popover-header"><h3>Notifications</h3><button class="text-button" id="markAllRead">Mark all read</button></div><div id="notificationList"></div>
+  </div>
+
+  <div class="popover profile-popover" id="profilePopover" hidden>
+    <div class="profile-summary"><span class="avatar large">RK</span><div><strong id="profileName">Ramesh Kumar</strong><small id="profilePhone">+91 ••••• 43210</small></div></div>
+    <button data-switch-role="farmer"><svg class="icon"><use href="#user"></use></svg>Farmer experience<span>Demo</span></button>
+    <button data-switch-role="officer"><svg class="icon"><use href="#clipboard"></use></svg>Officer dashboard<span>Demo</span></button>
+    <button data-switch-role="admin"><svg class="icon"><use href="#shield"></use></svg>Administrator<span>Demo</span></button>
+    <hr><button id="signOutButton"><svg class="icon"><use href="#logout"></use></svg>Sign out</button>
+  </div>
+
+  <div class="popover demo-popover" id="demoPopover" hidden>
+    <h3>Demo accounts</h3><p>Use password <code>demo123</code> with:</p><dl><dt>Farmer</dt><dd>9876543210</dd><dt>Officer</dt><dd>9876500001</dd><dt>Admin</dt><dd>9876500002</dd></dl>
+  </div>
+
+  <dialog id="loginDialog" class="app-dialog login-dialog">
+    <div class="login-visual"><div class="login-brand"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 33V18M20 23C12 23 8 18 8 10c8 0 12 5 12 13Zm0 3c8 0 13-5 13-14-8 0-13 5-13 14Z"/></svg></span><span>AgriProcure</span></div><div class="field-art" aria-hidden="true"><span>☀</span><svg viewBox="0 0 500 320"><path d="M0 220Q110 160 230 220T500 205V320H0Z"/><path d="M0 252Q130 190 260 255T500 230V320H0Z"/><path d="M78 320V211M78 236c-35 0-49-22-49-58 34 0 49 22 49 58Zm0 28c39 0 59-26 59-68-39 0-59 26-59 68ZM410 320V194M410 226c-31 0-45-21-45-53 31 0 45 21 45 53Zm0 24c35 0 52-23 52-61-35 0-52 23-52 61Z"/></svg></div><div><h2>Plan your visit.<br>Sell with confidence.</h2><p>Simple booking, transparent queues, and every procurement update in one place.</p></div></div>
+    <form id="loginForm" class="login-form" method="dialog">
+      <div class="login-form-header"><p class="eyebrow">WELCOME BACK</p><h1>Sign in to continue</h1><p>Access your appointments, tokens, and procurement status.</p></div>
+      <label>Mobile number<div class="input-group"><span>+91</span><input id="loginPhone" name="phone" inputmode="numeric" maxlength="10" value="9876543210" required autocomplete="username"></div></label>
+      <label>Password<div class="input-group"><svg class="icon"><use href="#lock"></use></svg><input id="loginPassword" name="password" type="password" value="demo123" required autocomplete="current-password"><button type="button" id="showPassword" aria-label="Show password"><svg class="icon"><use href="#eye"></use></svg></button></div></label>
+      <div class="login-error" id="loginError" role="alert" hidden></div>
+      <button class="primary-button full-width large-button" type="submit">Sign in <svg class="icon"><use href="#arrow-right"></use></svg></button>
+      <div class="demo-quick"><span>Quick demo</span><div><button type="button" data-demo-login="farmer">Farmer</button><button type="button" data-demo-login="officer">Officer</button><button type="button" data-demo-login="admin">Admin</button></div></div>
+      <p class="privacy-note"><svg class="icon"><use href="#shield"></use></svg>Your information is protected and only used for procurement services.</p>
+    </form>
+  </dialog>
+
+  <dialog id="bookingDialog" class="app-dialog booking-dialog">
+    <form id="bookingForm" method="dialog">
+      <div class="dialog-header"><div><p class="eyebrow">NEW APPOINTMENT</p><h2>Book a procurement slot</h2></div><button type="button" class="dialog-close" data-close-dialog aria-label="Close"><svg class="icon"><use href="#x"></use></svg></button></div>
+      <div class="step-indicator"><div class="active"><span>1</span><small>Crop & centre</small></div><i></i><div><span>2</span><small>Select slot</small></div><i></i><div><span>3</span><small>Confirm</small></div></div>
+      <div class="booking-step active" data-step="1">
+        <label>What are you selling?<select id="bookingCrop" required><option value="">Choose crop</option><option>Wheat</option><option>Paddy</option><option>Mustard</option><option>Maize</option></select></label>
+        <label>Preferred procurement centre<select id="bookingCentre" required><option value="">Choose centre</option></select></label>
+        <label>Estimated quantity (quintals)<div class="input-group"><input id="bookingQuantity" type="number" min="0.1" step="0.1" placeholder="e.g. 20" required><span>qtl</span></div><small>Actual purchased quantity will be measured at the centre.</small></label>
+      </div>
+      <div class="booking-step" data-step="2"><p class="field-label">Choose an available time</p><div id="slotList" class="slot-list"></div></div>
+      <div class="booking-step" data-step="3"><div class="booking-review" id="bookingReview"></div><label class="consent-row"><input type="checkbox" id="bookingConsent" required><span><svg><use href="#check"></use></svg></span>I confirm the details are correct and I will follow the centre requirements.</label></div>
+      <div class="dialog-actions"><button type="button" class="secondary-button" id="bookingBack" hidden>Back</button><button type="button" class="primary-button" id="bookingNext">Continue <svg class="icon"><use href="#arrow-right"></use></svg></button></div>
+    </form>
+  </dialog>
+
+  <dialog id="tokenDialog" class="app-dialog token-dialog">
+    <div class="dialog-header"><div><p class="eyebrow">DIGITAL TOKEN</p><h2>Ready for your visit</h2></div><button type="button" class="dialog-close" data-close-dialog aria-label="Close"><svg class="icon"><use href="#x"></use></svg></button></div>
+    <div class="ticket"><div class="ticket-top"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 33V18M20 23C12 23 8 18 8 10c8 0 12 5 12 13Zm0 3c8 0 13-5 13-14-8 0-13 5-13 14Z"/></svg></span><span class="status-pill success"><span></span>Confirmed</span></div><small>YOUR TOKEN NUMBER</small><strong id="ticketToken">W-018</strong><h3 id="ticketCentre">Karnal Grain Mandi</h3><div class="ticket-grid"><div><small>DATE</small><b id="ticketDate">21 Sep 2026</b></div><div><small>TIME</small><b id="ticketTime">09:00–11:00</b></div><div><small>CROP</small><b id="ticketCrop">Wheat</b></div><div><small>QUANTITY</small><b id="ticketQuantity">22.5 qtl</b></div></div><div class="barcode" aria-label="Booking barcode"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small id="ticketReference">AP-2609-1842</small></div>
+    <button class="primary-button full-width" data-action="print-token"><svg class="icon"><use href="#download"></use></svg>Save / print token</button>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+    <symbol id="map-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></symbol>
+    <symbol id="help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.6 2.6 0 1 1 3.4 2.5c-.9.4-.9 1.2-.9 2M12 17h.01"/></symbol>
+    <symbol id="bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="wheat" viewBox="0 0 24 24"><path d="M12 22V7M12 11c-4 0-6-2-6-6 4 0 6 2 6 6Zm0 4c4 0 6-2 6-6-4 0-6 2-6 6ZM8 19c-3 0-5-2-5-5 3 0 5 2 5 5Zm8 1c3 0 5-2 5-5-3 0-5 2-5 5Z"/></symbol>
+    <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol>
+    <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2Z"/><path d="M9 8h6M9 12h6"/></symbol>
+    <symbol id="wallet" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h13v4H5a2 2 0 0 0 0 4h16v8H5a2 2 0 0 1-2-2Z"/><path d="M16 12v4h5"/></symbol>
+    <symbol id="users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7L20 14M20 7v4h-4"/></symbol>
+    <symbol id="sparkles" viewBox="0 0 24 24"><path d="m12 3 1.3 3.7L17 8l-3.7 1.3L12 13l-1.3-3.7L7 8l3.7-1.3ZM5 14l.8 2.2L8 17l-2.2.8L5 20l-.8-2.2L2 17l2.2-.8ZM19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8Z"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2.1Z"/></symbol>
+    <symbol id="message" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></symbol>
+    <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 10h6M9 14h6"/></symbol>
+    <symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="logout" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M15 3h5a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-5"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+  </svg>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

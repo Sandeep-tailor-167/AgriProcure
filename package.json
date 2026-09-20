@@ -1,0 +1,19 @@
+{
+  "name": "agriprocure",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Farmer-first agricultural procurement management MVP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}

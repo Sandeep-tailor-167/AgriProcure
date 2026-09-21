@@ -1,0 +1,18 @@
+'use strict';
+const express = require('express');
+const controller = require('../controllers/queue.controller');
+const schemas = require('../validators/queue.schema');
+const { validate } = require('../middlewares/validate');
+const { authenticate } = require('../middlewares/authenticate');
+const { authorize } = require('../middlewares/authorize');
+const { asyncHandler } = require('../utils/async-handler');
+const { ROLES } = require('../constants/roles');
+const router = express.Router();
+router.post('/queue/check-in', authenticate, authorize(ROLES.FARMER), validate(schemas.checkInSchema), asyncHandler(controller.checkIn));
+router.get('/queue/my', authenticate, authorize(ROLES.FARMER), asyncHandler(controller.mine));
+router.get('/queue', authenticate, authorize(ROLES.OFFICER, ROLES.ADMIN), validate(schemas.centreDateSchema, 'query'), asyncHandler(controller.list));
+router.post('/queue/next', authenticate, authorize(ROLES.OFFICER, ROLES.ADMIN), validate(schemas.centreDateSchema), asyncHandler(controller.next));
+router.patch('/queue/tokens/:id', authenticate, authorize(ROLES.OFFICER, ROLES.ADMIN), validate(schemas.tokenParamSchema, 'params'), validate(schemas.transitionSchema), asyncHandler(controller.transition));
+router.put('/queue/control', authenticate, authorize(ROLES.OFFICER, ROLES.ADMIN), validate(schemas.controlSchema), asyncHandler(controller.control));
+router.post('/queue/interruptions', authenticate, authorize(ROLES.OFFICER, ROLES.ADMIN), validate(schemas.interruptionSchema), asyncHandler(controller.interruption));
+module.exports = router;

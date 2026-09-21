@@ -1,0 +1,25 @@
+:root {
+  --forest-950: #0b2d20;
+  --forest-900: #123d2b;
+  --forest-800: #185039;
+  --forest-700: #226849;
+  --forest-600: #2f7c57;
+  --sage-100: #e7f0e9;
+  --sage-50: #f2f6f2;
+  --off-white: #f8f7f1;
+  --white: #fff;
+  --charcoal: #1d2b24;
+  --muted: #657169;
+  --border: #dce4dd;
+  --amber: #d99a2b;
+  --amber-soft: #fff2ce;
+  --danger: #b6413d;
+  --danger-soft: #fbe9e7;
+  --success: #28764f;
+  --radius-sm: .65rem;
+  --radius: 1rem;
+  --radius-lg: 1.35rem;
+  --shadow-sm: 0 2px 8px rgba(24, 54, 39, .06);
+  --shadow: 0 1.2rem 3rem rgba(18, 61, 43, .11);
+  --font-sans: "Segoe UI", Inter, ui-sans-serif, system-ui, sans-serif;
+}

@@ -1,0 +1,1 @@
+'use strict';const {z}=require('zod');const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/);const filters=z.object({dateFrom:date,dateTo:date,centreId:z.coerce.number().int().positive().optional(),cropId:z.coerce.number().int().positive().optional()}).refine(v=>v.dateFrom<=v.dateTo,{message:'dateFrom must not be after dateTo'});module.exports={filters};

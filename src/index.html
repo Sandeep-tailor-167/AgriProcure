@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d2b">
+  <meta name="description" content="AgriProcure agricultural procurement management platform">
+  <title>AgriProcure</title>
+  <link rel="stylesheet" href="/frontend/css/tokens.css">
+  <link rel="stylesheet" href="/frontend/css/main.css">
+</head>
+<body>
+  <div id="app" aria-live="polite">
+    <div class="app-boot" role="status"><span class="spinner"></span><p>Loading AgriProcure…</p></div>
+  </div>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <noscript><p class="noscript">AgriProcure requires JavaScript for secure sign-in and live updates.</p></noscript>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/vendor/chart.js/chart.umd.js" defer></script>
+  <script type="module" src="/frontend/js/main.js"></script>
+</body>
+</html>

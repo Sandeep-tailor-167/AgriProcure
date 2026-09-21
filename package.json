@@ -1,19 +1,44 @@
 {
   "name": "agriprocure",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Farmer-first agricultural procurement management MVP",
-  "main": "server.js",
+  "description": "Production-minded agricultural procurement and operational intelligence platform",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js",
-    "test": "node --test tests/*.test.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "validate": "node scripts/validate-structure.js",
+    "test": "node --test tests/**/*.test.js",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:integration": "node --test tests/integration/*.test.js",
+    "test:concurrency": "node --test tests/concurrency/*.test.js",
+    "test:security": "node --test tests/security/*.test.js",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "ai:dev": "python -m uvicorn ai.app:app --reload --port 8000",
+    "ai:test": "python -m pytest ai/tests"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "chart.js": "^4.5.0",
+    "cors": "^2.8.5",
+    "csv-stringify": "^6.6.0",
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
-    "socket.io": "^4.8.1"
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.5",
+    "pdfkit": "^0.17.2",
+    "socket.io": "^4.8.1",
+    "zod": "^4.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
   }
 }

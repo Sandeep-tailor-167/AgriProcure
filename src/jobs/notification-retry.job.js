@@ -1,0 +1,2 @@
+'use strict';const repo=require('../repositories/notification.repository');const {deliverSms}=require('../services/notification.service');
+async function runNotificationRetries(limit=25){const rows=await repo.retryable(limit);const results=[];for(const row of rows)results.push({notificationId:row.notification_id,...await deliverSms(row.notification_id,row.phone,row.message)});return results;}module.exports={runNotificationRetries};

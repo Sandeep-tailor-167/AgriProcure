@@ -1,0 +1,1 @@
+'use strict';const {z}=require('zod');const demand=z.object({centreId:z.coerce.number().int().positive(),cropId:z.coerce.number().int().positive(),targetDate:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),capacity:z.coerce.number().int().positive().max(100000)});const token=z.object({id:z.coerce.number().int().positive()});module.exports={demand,token};

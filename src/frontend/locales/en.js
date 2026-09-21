@@ -1,0 +1,33 @@
+export default Object.freeze({
+  brand: 'AgriProcure', language: 'हिन्दी', signIn: 'Sign in', register: 'Register', mobile: 'Mobile number', password: 'Password',
+  fullName: 'Full name', village: 'Village', district: 'District', state: 'State', preferredLanguage: 'Preferred language', english: 'English', hindi: 'Hindi',
+  welcome: 'Welcome back', signInHelp: 'Use your verified mobile number to access procurement services.', createAccount: 'Create your farmer account',
+  registerHelp: 'We will verify your mobile through a configured OTP provider.', noEmail: 'AgriProcure does not use email login or email verification.',
+  requestOtp: 'Request mobile OTP', verifyOtp: 'Verify OTP', otpCode: 'Six-digit OTP', otpHelp: 'Enter the code sent by the configured mobile provider.',
+  securityNote: 'Your credentials and private procurement data are protected by server-side access controls.',
+  dashboard: 'Dashboard', centres: 'Centres', bookings: 'Bookings', queue: 'Live queue', analytics: 'Analytics', intelligence: 'Intelligence', profile: 'Profile', signOut: 'Sign out',
+  farmer: 'Farmer', officer: 'Procurement officer', admin: 'Administrator',
+  namaste: 'Namaste', farmerOverview: 'Your procurement journey in one clear place.', officerOverview: 'Operate only your assigned procurement centres.', adminOverview: 'Monitor authorised operations across the network.',
+  developmentNotice: 'Features appear as their genuine backend modules become available. No unavailable operation is presented as successful.',
+  account: 'Account', verifiedMobile: 'Verified mobile', role: 'Role', farmerId: 'Farmer ID', notAvailable: 'Not available',
+  findCentre: 'Find a procurement centre', findCentreHelp: 'Search current crop schedules and published capacity.',
+  manageBookings: 'Appointments and tokens', manageBookingsHelp: 'Book, cancel, reschedule, and retrieve valid digital tokens.',
+  followQueue: 'Queue and waiting time', followQueueHelp: 'See authorised live queue updates and clearly labelled estimates.',
+  trackProcurement: 'Procurement status', trackProcurementHelp: 'Follow inspection, purchase, and verified payment records.',
+  centreOperations: 'Centre operations', centreOperationsHelp: 'Schedules, check-ins, queues, inspections, and purchases.',
+  networkAdmin: 'Network administration', networkAdminHelp: 'Centres, officers, audit activity, and operational exceptions.',
+  operationalAnalytics: 'Operational analytics', operationalAnalyticsHelp: 'Calculated reports become available from stored operational records.',
+  aiIntelligence: 'AI intelligence', aiIntelligenceHelp: 'Versioned model predictions will be distinguished from statistical fallbacks.',
+  loading: 'Loading…', retry: 'Retry', emptyTitle: 'Nothing to show yet', emptyBody: 'Operational records will appear here after authorised activity.',
+  errorTitle: 'Unable to load this information', genericError: 'Something went wrong. Please try again.',
+  invalidCredentials: 'The mobile number or password is incorrect.', authUnavailable: 'Authentication is not configured on this environment.',
+  submittedOtp: 'OTP request submitted. Delivery is not assumed until verified by the provider.', accountCreated: 'Mobile verified and account activated.',
+  required: 'This field is required.', view: 'Open', phoneOnly: 'Mobile-only authentication'
+  ,searchCentres: 'Search centre or district', allCrops: 'All crops', allDistricts: 'All districts', availableSlots: 'available slots', operatingHours: 'Operating hours', supportedCrops: 'Supported crops',
+  manageSchedule: 'Publish a crop schedule', procurementDate: 'Procurement date', startTime: 'Start time', endTime: 'End time', capacity: 'Capacity', publish: 'Publish schedule', draft: 'Save draft',
+  centreClosed: 'Closed', centreOpen: 'Open', centreBusy: 'Busy', closeCentre: 'Close centre', reopenCentre: 'Reopen centre', scheduleSaved: 'Schedule saved successfully.'
+  ,newBooking: 'Book appointment', chooseSchedule: 'Choose an available schedule', estimatedQuantity: 'Estimated quantity', quintals: 'quintals', confirmBooking: 'Confirm booking', bookingConfirmed: 'Appointment confirmed.',
+  token: 'Digital token', bookingReference: 'Booking reference', appointmentStatus: 'Appointment status', cancel: 'Cancel', reschedule: 'Reschedule', rescheduleBooking: 'Choose a new slot',
+  cancellationReason: 'Reason for cancellation', bookingCancelled: 'Appointment cancelled and capacity released.', bookingRescheduled: 'Appointment rescheduled.', noSchedules: 'No published schedules are currently available.',
+  checkIn: 'Check in', farmersAhead: 'Farmers ahead', estimatedWait: 'Estimated wait', minutes: 'minutes', lastUpdated: 'Last updated', queuePaused: 'Queue paused', callNext: 'Call next token', pauseQueue: 'Pause queue', resumeQueue: 'Resume queue', startService: 'Start service', startInspection: 'Start inspection', complete: 'Complete', noShow: 'No-show', noShowReason: 'Reason for no-show', recordInspection: 'Record inspection', inspectionDecision: 'Inspection decision', actualQuantity: 'Actual quantity', decisionReason: 'Decision reason', acceptedQuantity: 'Accepted quantity', authorisedRate: 'Authorised rate', recordPurchase: 'Record purchase', recordPayment: 'Record payment status', paymentStatus: 'Payment status', verificationSource: 'Verification source', providerReference: 'Provider reference', purchaseValue: 'Purchase value', latestNotifications: 'Latest notifications', appointments: 'Appointments', completed: 'Completed', completionRate: 'Completion rate', averageWaitMinutes: 'Average wait (minutes)', capacityUtilisation: 'Capacity utilisation', procuredQuantity: 'Procured quantity', generateForecast: 'Generate forecast', predictedArrivals: 'predicted arrivals', predictionRange: 'Prediction range', modelPrediction: 'Model prediction', fallbackEstimate: 'Statistical fallback', predictWait: 'Predict waiting time', capacityRecommendations: 'Capacity recommendations', generateRecommendation: 'Generate recommendation', capacityGap: 'Capacity gap', approve: 'Approve', reject: 'Reject', reviewReason: 'Review reason'
+});

@@ -1,0 +1,46 @@
+erDiagram
+  USERS ||--o| FARMERS : owns
+  USERS ||--o{ OFFICER_ASSIGNMENTS : receives
+  USERS ||--o{ AUDIT_LOGS : creates
+  USERS ||--o{ NOTIFICATIONS : receives
+  USERS ||--o{ NOTIFICATION_PREFERENCES : configures
+  PROCUREMENT_CENTRES ||--o{ FARMERS : preferred_by
+  PROCUREMENT_CENTRES ||--o{ OFFICER_ASSIGNMENTS : staffed_by
+  PROCUREMENT_CENTRES ||--o{ CENTRE_CROPS : supports
+  CROPS ||--o{ CENTRE_CROPS : available_at
+  PROCUREMENT_CENTRES ||--o{ PROCUREMENT_SCHEDULES : publishes
+  CROPS ||--o{ PROCUREMENT_SCHEDULES : scheduled_as
+  PROCUREMENT_SCHEDULES ||--o{ SCHEDULE_REVISIONS : versions
+  FARMERS ||--o{ APPOINTMENTS : books
+  PROCUREMENT_SCHEDULES ||--o{ APPOINTMENTS : reserves
+  APPOINTMENTS ||--|| QUEUE_TOKENS : receives
+  QUEUE_TOKENS ||--o{ QUEUE_EVENTS : records
+  APPOINTMENTS ||--o| PROCUREMENT_TRANSACTIONS : produces
+  PROCUREMENT_TRANSACTIONS ||--o{ INSPECTION_RECORDS : inspected_with
+  PROCUREMENT_TRANSACTIONS ||--o{ TRANSACTION_AMENDMENTS : corrected_by
+  PROCUREMENT_TRANSACTIONS ||--o{ PAYMENT_RECORDS : tracked_by
+
+  USERS { bigint user_id PK string phone UK string role }
+  FARMERS { bigint farmer_id PK bigint user_id FK string farmer_code UK }
+  PROCUREMENT_CENTRES { bigint centre_id PK string centre_code UK int physical_daily_capacity }
+  CROPS { bigint crop_id PK string crop_code UK }
+  PROCUREMENT_SCHEDULES { bigint schedule_id PK bigint centre_id FK bigint crop_id FK int capacity int booked_count }
+  APPOINTMENTS { bigint appointment_id PK bigint farmer_id FK bigint schedule_id FK string booking_reference UK decimal estimated_quantity }
+  QUEUE_TOKENS { bigint token_id PK bigint appointment_id FK string token_number int claim_version }
+  PROCUREMENT_TRANSACTIONS { bigint transaction_id PK bigint appointment_id FK decimal total_amount string transaction_status }
+  PAYMENT_RECORDS { bigint payment_id PK bigint transaction_id FK decimal amount string payment_status }
+  AUDIT_LOGS { bigint audit_id PK bigint actor_id FK string entity_type string entity_id }
+  NOTIFICATIONS ||--o{ NOTIFICATION_DELIVERY_ATTEMPTS : delivers_via
+  PROCUREMENT_CENTRES ||--o{ OPERATIONAL_METRICS : aggregates
+  AI_MODEL_VERSIONS ||--o{ AI_PREDICTIONS : generates
+  PROCUREMENT_CENTRES ||--o{ AI_PREDICTIONS : forecasts
+  QUEUE_TOKENS ||--o{ AI_PREDICTIONS : wait_forecast
+  AI_PREDICTIONS ||--o| CAPACITY_RECOMMENDATIONS : supports
+  PROCUREMENT_CENTRES ||--o{ CAPACITY_RECOMMENDATIONS : receives
+
+  NOTIFICATIONS { bigint notification_id PK bigint user_id FK string deduplication_key UK }
+  NOTIFICATION_DELIVERY_ATTEMPTS { bigint attempt_id PK bigint notification_id FK string delivery_status }
+  OPERATIONAL_METRICS { bigint metric_id PK bigint centre_id FK date metric_date }
+  AI_MODEL_VERSIONS { bigint model_version_id PK string model_type string version }
+  AI_PREDICTIONS { bigint prediction_id PK bigint model_version_id FK decimal prediction_value string method }
+  CAPACITY_RECOMMENDATIONS { bigint recommendation_id PK bigint prediction_id FK string recommendation_status }

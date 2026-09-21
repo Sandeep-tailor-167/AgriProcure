@@ -1,0 +1,1 @@
+'use strict';function registerNotificationSocket(socket){socket.emit('notification:ready',{userId:socket.auth.userId,connectedAt:new Date().toISOString()});}module.exports={registerNotificationSocket};

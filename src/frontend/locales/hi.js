@@ -1,0 +1,33 @@
+export default Object.freeze({
+  brand: 'एग्रीप्रोक्योर', language: 'English', signIn: 'साइन इन', register: 'पंजीकरण', mobile: 'मोबाइल नंबर', password: 'पासवर्ड',
+  fullName: 'पूरा नाम', village: 'गाँव', district: 'ज़िला', state: 'राज्य', preferredLanguage: 'पसंदीदा भाषा', english: 'अंग्रेज़ी', hindi: 'हिन्दी',
+  welcome: 'फिर से स्वागत है', signInHelp: 'खरीद सेवाओं के लिए अपने सत्यापित मोबाइल नंबर का उपयोग करें।', createAccount: 'किसान खाता बनाएँ',
+  registerHelp: 'कॉन्फ़िगर किए गए प्रदाता से मोबाइल OTP सत्यापित किया जाएगा।', noEmail: 'एग्रीप्रोक्योर ईमेल लॉगिन या ईमेल सत्यापन का उपयोग नहीं करता।',
+  requestOtp: 'मोबाइल OTP मंगाएँ', verifyOtp: 'OTP सत्यापित करें', otpCode: 'छह अंकों का OTP', otpHelp: 'मोबाइल प्रदाता से मिला कोड दर्ज करें।',
+  securityNote: 'आपकी निजी खरीद जानकारी सर्वर पर अनुमति जाँच से सुरक्षित है।',
+  dashboard: 'डैशबोर्ड', centres: 'केंद्र', bookings: 'बुकिंग', queue: 'लाइव कतार', analytics: 'विश्लेषण', intelligence: 'बुद्धिमत्ता', profile: 'प्रोफ़ाइल', signOut: 'साइन आउट',
+  farmer: 'किसान', officer: 'खरीद अधिकारी', admin: 'प्रशासक',
+  namaste: 'नमस्ते', farmerOverview: 'आपकी पूरी खरीद यात्रा एक स्पष्ट स्थान पर।', officerOverview: 'केवल अधिकृत खरीद केंद्रों का संचालन करें।', adminOverview: 'नेटवर्क में अधिकृत कार्यों की निगरानी करें।',
+  developmentNotice: 'सुविधाएँ वास्तविक बैकएंड मॉड्यूल उपलब्ध होने पर दिखाई देती हैं। अनुपलब्ध कार्य को सफल नहीं दिखाया जाता।',
+  account: 'खाता', verifiedMobile: 'सत्यापित मोबाइल', role: 'भूमिका', farmerId: 'किसान आईडी', notAvailable: 'उपलब्ध नहीं',
+  findCentre: 'खरीद केंद्र खोजें', findCentreHelp: 'वर्तमान फसल कार्यक्रम और प्रकाशित क्षमता खोजें।',
+  manageBookings: 'अपॉइंटमेंट और टोकन', manageBookingsHelp: 'बुक, रद्द, पुनर्निर्धारित करें और वैध डिजिटल टोकन पाएँ।',
+  followQueue: 'कतार और प्रतीक्षा समय', followQueueHelp: 'अधिकृत लाइव अपडेट और स्पष्ट अनुमान देखें।',
+  trackProcurement: 'खरीद स्थिति', trackProcurementHelp: 'निरीक्षण, खरीद और सत्यापित भुगतान रिकॉर्ड देखें।',
+  centreOperations: 'केंद्र संचालन', centreOperationsHelp: 'कार्यक्रम, चेक-इन, कतार, निरीक्षण और खरीद।',
+  networkAdmin: 'नेटवर्क प्रशासन', networkAdminHelp: 'केंद्र, अधिकारी, ऑडिट और संचालन अपवाद।',
+  operationalAnalytics: 'संचालन विश्लेषण', operationalAnalyticsHelp: 'संग्रहीत रिकॉर्ड से गणना की गई रिपोर्ट।',
+  aiIntelligence: 'AI बुद्धिमत्ता', aiIntelligenceHelp: 'मॉडल अनुमान और सांख्यिकीय विकल्प स्पष्ट रूप से अलग होंगे।',
+  loading: 'लोड हो रहा है…', retry: 'फिर कोशिश करें', emptyTitle: 'अभी कोई जानकारी नहीं', emptyBody: 'अधिकृत गतिविधि के बाद रिकॉर्ड यहाँ दिखेंगे।',
+  errorTitle: 'जानकारी लोड नहीं हो सकी', genericError: 'कुछ गलत हुआ। कृपया फिर कोशिश करें।',
+  invalidCredentials: 'मोबाइल नंबर या पासवर्ड गलत है।', authUnavailable: 'इस वातावरण में प्रमाणीकरण कॉन्फ़िगर नहीं है।',
+  submittedOtp: 'OTP अनुरोध भेजा गया। प्रदाता पुष्टि के बिना डिलीवरी नहीं मानी जाती।', accountCreated: 'मोबाइल सत्यापित और खाता सक्रिय।',
+  required: 'यह जानकारी आवश्यक है।', view: 'खोलें', phoneOnly: 'केवल मोबाइल प्रमाणीकरण'
+  ,searchCentres: 'केंद्र या ज़िला खोजें', allCrops: 'सभी फसलें', allDistricts: 'सभी ज़िले', availableSlots: 'उपलब्ध स्लॉट', operatingHours: 'कार्य समय', supportedCrops: 'समर्थित फसलें',
+  manageSchedule: 'फसल कार्यक्रम प्रकाशित करें', procurementDate: 'खरीद दिनांक', startTime: 'शुरू समय', endTime: 'समाप्ति समय', capacity: 'क्षमता', publish: 'कार्यक्रम प्रकाशित करें', draft: 'ड्राफ़्ट सहेजें',
+  centreClosed: 'बंद', centreOpen: 'खुला', centreBusy: 'व्यस्त', closeCentre: 'केंद्र बंद करें', reopenCentre: 'केंद्र फिर खोलें', scheduleSaved: 'कार्यक्रम सफलतापूर्वक सहेजा गया।'
+  ,newBooking: 'अपॉइंटमेंट बुक करें', chooseSchedule: 'उपलब्ध कार्यक्रम चुनें', estimatedQuantity: 'अनुमानित मात्रा', quintals: 'क्विंटल', confirmBooking: 'बुकिंग पक्की करें', bookingConfirmed: 'अपॉइंटमेंट पक्का हुआ।',
+  token: 'डिजिटल टोकन', bookingReference: 'बुकिंग संदर्भ', appointmentStatus: 'अपॉइंटमेंट स्थिति', cancel: 'रद्द करें', reschedule: 'पुनर्निर्धारित करें', rescheduleBooking: 'नया स्लॉट चुनें',
+  cancellationReason: 'रद्द करने का कारण', bookingCancelled: 'अपॉइंटमेंट रद्द और क्षमता मुक्त हुई।', bookingRescheduled: 'अपॉइंटमेंट पुनर्निर्धारित हुआ।', noSchedules: 'अभी कोई प्रकाशित कार्यक्रम उपलब्ध नहीं है।',
+  checkIn: 'चेक इन', farmersAhead: 'आगे किसान', estimatedWait: 'अनुमानित प्रतीक्षा', minutes: 'मिनट', lastUpdated: 'अंतिम अपडेट', queuePaused: 'कतार रुकी है', callNext: 'अगला टोकन बुलाएँ', pauseQueue: 'कतार रोकें', resumeQueue: 'कतार चलाएँ', startService: 'सेवा शुरू करें', startInspection: 'निरीक्षण शुरू करें', complete: 'पूरा करें', noShow: 'अनुपस्थित', noShowReason: 'अनुपस्थिति का कारण', recordInspection: 'निरीक्षण दर्ज करें', inspectionDecision: 'निरीक्षण निर्णय', actualQuantity: 'वास्तविक मात्रा', decisionReason: 'निर्णय का कारण', acceptedQuantity: 'स्वीकृत मात्रा', authorisedRate: 'अधिकृत दर', recordPurchase: 'खरीद दर्ज करें', recordPayment: 'भुगतान स्थिति दर्ज करें', paymentStatus: 'भुगतान स्थिति', verificationSource: 'सत्यापन स्रोत', providerReference: 'प्रदाता संदर्भ', purchaseValue: 'खरीद मूल्य', latestNotifications: 'नवीनतम सूचनाएँ', appointments: 'अपॉइंटमेंट', completed: 'पूर्ण', completionRate: 'पूर्णता दर', averageWaitMinutes: 'औसत प्रतीक्षा (मिनट)', capacityUtilisation: 'क्षमता उपयोग', procuredQuantity: 'खरीदी मात्रा', generateForecast: 'पूर्वानुमान बनाएँ', predictedArrivals: 'अनुमानित आगमन', predictionRange: 'अनुमान सीमा', modelPrediction: 'मॉडल पूर्वानुमान', fallbackEstimate: 'सांख्यिकीय विकल्प', predictWait: 'प्रतीक्षा का पूर्वानुमान', capacityRecommendations: 'क्षमता सुझाव', generateRecommendation: 'सुझाव बनाएँ', capacityGap: 'क्षमता अंतर', approve: 'स्वीकृत करें', reject: 'अस्वीकृत करें', reviewReason: 'समीक्षा कारण'
+});

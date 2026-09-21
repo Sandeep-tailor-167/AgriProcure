@@ -1,0 +1,11 @@
+'use strict';
+const express=require('express');const {z}=require('zod');const c=require('../controllers/transaction.controller');const s=require('../validators/transaction.schema');
+const {validate}=require('../middlewares/validate');const {authenticate}=require('../middlewares/authenticate');const {authorize}=require('../middlewares/authorize');const {asyncHandler}=require('../utils/async-handler');const {ROLES}=require('../constants/roles');
+const router=express.Router();const operator=[authenticate,authorize(ROLES.OFFICER,ROLES.ADMIN)];
+router.get('/transactions/my',authenticate,authorize(ROLES.FARMER),asyncHandler(c.mine));
+router.get('/transactions',...operator,validate(z.object({centreId:z.coerce.number().int().positive()}),'query'),asyncHandler(c.list));
+router.post('/transactions/inspections',...operator,validate(s.inspectionSchema),asyncHandler(c.inspect));
+router.post('/transactions/:id/purchase',...operator,validate(s.idParamSchema,'params'),validate(s.purchaseSchema),asyncHandler(c.purchase));
+router.post('/transactions/:id/payments',...operator,validate(s.idParamSchema,'params'),validate(s.paymentSchema),asyncHandler(c.payment));
+router.patch('/transactions/:id/correction',...operator,validate(s.idParamSchema,'params'),validate(s.correctionSchema),asyncHandler(c.correction));
+module.exports=router;
